@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Random;
 
 public class Main {
@@ -13,13 +12,13 @@ public class Main {
 
     public static void OsToInstall(byte os, short deviceYear) {
         if (os == 1) {
-            System.out.print("Установите " + (deviceYear < LocalDate.now().getYear() ? "облегченную " : "обычную") + " версию приложения для Android по ссылке");
+            System.out.print("Установите " + (deviceYear < 2015 ? "облегченную " : "обычную") + " версию приложения для Android по ссылке");
         } else {
-            System.out.print("Установите " + (deviceYear < LocalDate.now().getYear() ? "облегченную " : "обычную") + " версию приложения для iOS по ссылке");
+            System.out.print("Установите " + (deviceYear < 2015 ? "облегченную " : "обычную") + " версию приложения для iOS по ссылке");
         }
     }
 
-    public static void DaysToDelivery(int deliveryDistance) {
+    public static void GetNumberOfDaysBeforeDelivery(int deliveryDistance) {
         if (deliveryDistance <= 20) {
             System.out.print("Потребуется дней: 1");
         } else if (deliveryDistance <= 60) {
@@ -58,7 +57,7 @@ public class Main {
 
         System.out.printf("Дистанция до клиента - %d\n", deliveryDistance);
 
-        DaysToDelivery(deliveryDistance);
+        GetNumberOfDaysBeforeDelivery(deliveryDistance);
 
     }
 }
